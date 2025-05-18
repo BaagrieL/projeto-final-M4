@@ -4,7 +4,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -17,8 +17,8 @@ model alerta {
   organizacao    organizacao?        @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: NoAction, onUpdate: NoAction, map: "alerta_ibfk_1")
   doadores       doadores?           @relation(fields: [id_doadores], references: [id_doadores], onDelete: NoAction, onUpdate: NoAction, map: "alerta_ibfk_2")
 
-  @@index([id_doadores], map: "id_doadores")
-  @@index([id_organizacao], map: "id_organizacao")
+  @@index([id_doadores], map: "ida_doadores")
+  @@index([id_organizacao], map: "ida_organizacao")
 }
 
 model categoria_doacao {
@@ -32,8 +32,8 @@ model categoria_doacao {
   doadores       doadores?                     @relation(fields: [id_doadores], references: [id_doadores], onDelete: NoAction, onUpdate: NoAction, map: "categoria_doacao_ibfk_2")
   impacto_social impacto_social[]
 
-  @@index([id_doadores], map: "id_doadores")
-  @@index([id_organizacao], map: "id_organizacao")
+  @@index([id_doadores], map: "idc_doadores")
+  @@index([id_organizacao], map: "idc_organizacao")
 }
 
 model doadores {
@@ -56,8 +56,8 @@ model feedback {
   organizacao        organizacao?      @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: NoAction, onUpdate: NoAction, map: "feedback_ibfk_1")
   doadores           doadores?         @relation(fields: [id_doadores], references: [id_doadores], onDelete: NoAction, onUpdate: NoAction, map: "feedback_ibfk_2")
 
-  @@index([id_doadores], map: "id_doadores")
-  @@index([id_organizacao], map: "id_organizacao")
+  @@index([id_doadores], map: "idf_doadores")
+  @@index([id_organizacao], map: "idf_organizacao")
 }
 
 model impacto_social {
@@ -69,9 +69,9 @@ model impacto_social {
   localizacao      localizacao?      @relation(fields: [id_localizacao], references: [id_localizacao], onDelete: NoAction, onUpdate: NoAction, map: "impacto_social_ibfk_2")
   categoria_doacao categoria_doacao? @relation(fields: [id_doacao], references: [id_doacao], onDelete: NoAction, onUpdate: NoAction, map: "impacto_social_ibfk_3")
 
-  @@index([id_doacao], map: "id_doacao")
-  @@index([id_localizacao], map: "id_localizacao")
-  @@index([id_organizacao], map: "id_organizacao")
+  @@index([id_doacao], map: "idi_doacao")
+  @@index([id_localizacao], map: "idi_localizacao")
+  @@index([id_organizacao], map: "idi_organizacao")
 }
 
 model localizacao {
@@ -83,7 +83,7 @@ model localizacao {
   impacto_social impacto_social[]
   organizacao    organizacao?     @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: NoAction, onUpdate: NoAction, map: "localizacao_ibfk_1")
 
-  @@index([id_organizacao], map: "id_organizacao")
+  @@index([id_organizacao], map: "idl_organizacao")
 }
 
 model organizacao {
@@ -103,8 +103,8 @@ model organizacao {
   voluntarios      voluntarios?       @relation(fields: [id_voluntarios], references: [id_voluntarios], onDelete: NoAction, onUpdate: NoAction, map: "organizacao_ibfk_1")
   doadores         doadores?          @relation(fields: [id_doadores], references: [id_doadores], onDelete: NoAction, onUpdate: NoAction, map: "organizacao_ibfk_2")
 
-  @@index([id_doadores], map: "id_doadores")
-  @@index([id_voluntarios], map: "id_voluntarios")
+  @@index([id_doadores], map: "ido_doadores")
+  @@index([id_voluntarios], map: "ido_voluntarios")
 }
 
 model voluntarios {
