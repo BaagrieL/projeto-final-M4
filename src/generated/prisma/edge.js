@@ -209,7 +209,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\plugify\\Music\\pda\\projeto-final-M4-ruany\\src\\generated\\prisma",
+      "value": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\projeto-final-M4\\src\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -223,12 +223,11 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\plugify\\Music\\pda\\projeto-final-M4-ruany\\src\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\maria\\OneDrive\\Documentos\\GitHub\\projeto-final-M4\\src\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.7.0",
