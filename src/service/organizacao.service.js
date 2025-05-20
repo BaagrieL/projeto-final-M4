@@ -1,5 +1,6 @@
-import { PrismaClient } from '../generated/prisma/client.js'
+import { PrismaClient } from '../generated/prisma/client.js';
 
+const prisma = new PrismaClient();
 
 export const criarOrganizacao = async (data) => {
   return await prisma.organizacao.create({
