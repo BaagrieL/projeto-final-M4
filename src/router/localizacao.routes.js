@@ -1,8 +1,6 @@
-import { Router } from "express";
-import { PrismaClient } from "@prisma/client";
-
-const localizacao = Router();
-const prisma = new PrismaClient();
+import express from 'express';
+import prisma from '../service/localizacao.service.js'
+const localizacao = express.Router();
 
 //
 localizacao.get("/", async (req, res) => {
@@ -18,17 +16,21 @@ localizacao.post("/organizacao/:id/localizacoes", async (req, res) => {
         const {id} = req.params;
         const {nome, longitude, latitude} = req.body;
 
+        if (!id || !nome || !longitude || !latitude) {
+            return res.status(400).json({ error: "Parâmetros obrigatórios faltando." });
+        }
+
         const novaLocalizacao = await prisma.localizacao.create({
             data: {
                 nome,
                 longitude,
                 latitude,
-                organizacao: {connect: {id: parseInt(id)}}
+                organizacao: {connect: {id_organizacao: parseInt(id)}}
             }
         });
         res.status(201).json(novaLocalizacao);
     } catch (error) {
-        res.status(400).json({error: error.mensagem});
+        res.status(400).json({error: error.message});
     }
 });
 
@@ -39,8 +41,12 @@ localizacao.put("/atualiza/:id", async (req, res) => {
 
     try {
         const atualizarLocalizacao = await prisma.localizacao.update({
-            where: {id: parseInt(id)},
-            data: {nome, longitude, latitude}
+            where: {id_localizacao: parseInt(id)},
+            data: {
+                nome, 
+                longitude:parseFloat(longitude), 
+                latitude:parseFloat(latitude)
+            }
         });
         res.json(atualizarLocalizacao);
     } catch (error) {
@@ -54,7 +60,7 @@ localizacao.delete("/delete/:id", async (req, res) => {
 
     try {
         await prisma.localizacao.delete({
-            where: {id: parseInt(id)}
+            where: {id_localizacao: parseInt(id)}
         });
         res.json({mensagem: `Localização deletada com sucesso!`});
     } catch (error) {
