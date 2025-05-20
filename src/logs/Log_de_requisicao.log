@@ -168,6 +168,7 @@
 2025-05-20	14:00:44	149a734c-0662-49a8-8854-46b90756a812	GET	/voluntarios	undefined
 2025-05-20	14:06:03	0c8d2e4a-54ae-42e1-b1d9-16b1fb63c7be	GET	/voluntarios	undefined
 2025-05-20	14:06:03	111341ff-b4f2-440c-8e3e-8c55088f4b75	GET	/voluntarios	undefined
+<<<<<<< HEAD
 2025-05-20	14:14:36	920f8f14-16ca-46ce-a368-8f82bf4efced	DELETE	/voluntarios	undefined
 2025-05-20	14:14:36	76729a17-b7c6-49be-a93e-efd480813a53	DELETE	/voluntarios	undefined
 2025-05-20	14:14:44	2baa0f09-2258-4c58-8762-062c58bc0b57	GET	/voluntarios	undefined
@@ -203,3 +204,49 @@
 2025-05-20	14:34:16	9792298b-3122-48ec-99dc-186510d0388f	POST	/organizacao	undefined
 2025-05-20	14:34:29	564a5501-5a47-46a7-bd27-1541dda7ef7d	GET	/organizacoes	undefined
 2025-05-20	14:34:29	c43a7280-8a12-4965-9c83-a387081baed1	GET	/organizacoes	undefined
+=======
+2025-05-20	15:03:58	65e484da-1a97-4556-a027-ca993004d921	GET	/Redesolidaria/	undefined
+2025-05-20	15:03:58	c24d4f03-efff-4c6c-816e-b1711c218042	GET	/Redesolidaria/	undefined
+2025-05-20	15:04:37	786076f3-744b-4c1f-998f-2b12907ea0cf	GET	/doa%C3%A7%C3%A3o/	undefined
+2025-05-20	15:04:37	254c97fd-571e-452d-a897-da154bce8daa	GET	/doa%C3%A7%C3%A3o/	undefined
+2025-05-20	15:05:21	1cc050c1-f8bb-4cbb-a010-013e4e82619d	GET	/doacao/	undefined
+2025-05-20	15:05:21	caf562e5-f7ba-42cd-87f6-87d0ee36faac	GET	/doacao/	undefined
+2025-05-20	15:06:07	7f97491b-be9d-4494-a156-65cd65038382	GET	/doacao/	undefined
+2025-05-20	15:06:07	a04503a3-3003-49a2-b45b-ec23d184d1fa	GET	/doacao/	undefined
+2025-05-20	15:08:00	b5d5e072-3f67-43a1-8a3b-8292612fd3ea	GET	/doacao/	undefined
+2025-05-20	15:08:00	c5ce494e-2177-47bf-bc72-7f0508b59c16	GET	/doacao/	undefined
+2025-05-20	15:20:44	f3dbf461-b7c5-404a-b2be-8c192e91eb39	GET	/doacao/	undefined
+2025-05-20	15:20:44	a3b4e2f1-e3d5-4a60-82cf-9042e59cfc75	GET	/doacao/	undefined
+2025-05-20	15:22:24	2dd92c76-0639-4a31-93ab-af2f54aaa826	POST	/doacao/doar	undefined
+2025-05-20	15:22:24	dcec4566-67e5-4c37-adb5-c7e029eb6efc	POST	/doacao/doar	undefined
+2025-05-20	15:24:30	9a981ebf-5146-417e-bc1e-516f0789d15d	POST	/doacao/doar	undefined
+2025-05-20	15:24:30	a0a0ba71-a243-45d4-95bd-0b4800e42403	POST	/doacao/doar	undefined
+2025-05-20	15:28:04	fb7207e9-aec0-4760-b245-85b7bd752ba9	DELETE	/doacao/deletar/1	undefined
+2025-05-20	15:28:04	6a37a645-f7cb-48c0-a374-8a6d1d39e4c7	DELETE	/doacao/deletar/1	undefined
+2025-05-20	15:28:10	d66bbe15-5ce7-4384-8b16-d6922eacc382	GET	/doacao/	undefined
+2025-05-20	15:28:10	0e993843-efdf-4016-8818-5a5a1b3ac377	GET	/doacao/	undefined
+2025-05-20	15:28:15	498b4dab-5113-4315-8018-341d8b7d8f91	POST	/doacao/doar	undefined
+2025-05-20	15:28:15	189b4b5c-dd82-47e1-b93d-2fef16d72772	POST	/doacao/doar	undefined
+2025-05-20	15:28:20	3525db7d-7e70-4982-8e29-ee16c5979ae6	GET	/doacao/	undefined
+2025-05-20	15:28:20	b8ffe13a-e8b1-4343-84f4-eeed6de9f97b	GET	/doacao/	undefined
+2025-05-20	15:29:39	2cc16825-b865-4c9b-a6d1-b42ba2efd137	POST	/doacao/doar	undefined
+2025-05-20	15:29:39	7f4fc435-ecfb-4968-94cb-f572f02254ec	POST	/doacao/doar	undefined
+2025-05-20	15:29:52	f01f365d-69a4-465e-8338-1c02ea06c7d4	GET	/doacao/	undefined
+2025-05-20	15:29:52	1fce3cc9-3331-4c7c-bf85-b28ede7298ec	GET	/doacao/	undefined
+2025-05-20	15:30:02	f486cc37-e07e-462e-a910-0b8cf91fb33e	DELETE	/doacao/deletar/2	undefined
+2025-05-20	15:30:02	5989b25b-7394-40a3-98c2-b161f2e43681	DELETE	/doacao/deletar/2	undefined
+2025-05-20	15:30:07	dd11c136-3e63-48ed-bb78-a00fe82ac879	GET	/doacao/	undefined
+2025-05-20	15:30:07	369ea192-6cdc-4467-8595-ea13fa0d9cf4	GET	/doacao/	undefined
+2025-05-20	15:30:34	745b880f-076b-4286-a72e-323580320bba	PUT	/doacao/atualizar/2	undefined
+2025-05-20	15:30:34	2c6ccac1-6d5a-4ea1-9238-eca825cd5c12	PUT	/doacao/atualizar/2	undefined
+2025-05-20	15:30:38	8359d553-d60d-4cc5-b7c1-74215fe435f4	PUT	/doacao/atualizar/2	undefined
+2025-05-20	15:30:38	d15979af-584a-49ec-b190-70816cc26882	PUT	/doacao/atualizar/2	undefined
+2025-05-20	15:31:12	b1745773-1664-4b81-bda0-13b939f57b27	PUT	/doacao/atualizar/2	undefined
+2025-05-20	15:31:12	a6623436-2180-431d-9825-006bc49e72f6	PUT	/doacao/atualizar/2	undefined
+2025-05-20	15:31:15	59f728ef-5f22-408e-a797-71c6e69315b1	PUT	/doacao/atualizar/2	undefined
+2025-05-20	15:31:15	776df9ce-89bd-456f-8348-f0f2ed215a35	PUT	/doacao/atualizar/2	undefined
+2025-05-20	15:31:31	bc15c674-8129-4c35-a493-7497590e430d	PUT	/doacao/atualizar/4	undefined
+2025-05-20	15:31:31	5d66ffd5-eef4-4030-8e64-743d9816024d	PUT	/doacao/atualizar/4	undefined
+2025-05-20	15:31:41	977f411f-d3f6-485d-a132-97f62205fd71	GET	/doacao/	undefined
+2025-05-20	15:31:41	e45fffa1-76d1-4bba-aaaf-7d55d6d08f9b	GET	/doacao/	undefined
+ 2d2449d (feat:adicionado as funcionalidades de doação)

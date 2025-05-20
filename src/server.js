@@ -6,6 +6,7 @@ import redesolidariaRouter from "./router/redesolidaria.routes.js";
 import localizacaoRoutes from "./router/localizacao.routes.js";
 import organizacaoRoutes from "./router/organizacao.routes.js";
 import voluntarioRoutes from "./router/voluntario.routes.js";
+import doacaoRoutes from "./router/doacao.routes.js";
 
 import { logEvents, logger } from "./middlewares/logger.middlewares.js";
 
@@ -26,6 +27,7 @@ app.use("/redesolidaria", redesolidariaRouter);
 app.use("/localizacao", localizacaoRoutes);
 app.use("/organizacoes", organizacaoRoutes);
 app.use("/voluntarios", voluntarioRoutes);
+app.use("/doacao",doacaoRoutes);
 
 // Inicialização do servidor
 app.listen(PORT, () => {
