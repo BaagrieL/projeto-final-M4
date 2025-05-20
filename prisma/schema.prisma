@@ -25,6 +25,7 @@ model categoria_doacao {
   quantidade     Int?
   tipo_doacao    categoria_doacao_tipo_doacao?
   validade       DateTime?                     @db.Date
+  descricao_doacao   String?            @db.VarChar(200)
   id_doadores    Int?
   id_organizacao Int?
   organizacao    organizacao?                  @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: NoAction, onUpdate: NoAction, map: "categoria_doacao_ibfk_1")
