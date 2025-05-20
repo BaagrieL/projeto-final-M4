@@ -20,7 +20,6 @@ app.use(cors());
 
 app.use(logger);
 app.use(express.json());
-app.use(logger);
 
 // Rotas
 app.use("/redesolidaria", redesolidariaRouter);
