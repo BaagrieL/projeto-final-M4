@@ -1,42 +1,41 @@
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+import { PrismaClient } from '../generated/prisma/client.js'
 
-export const criarVoluntario = async (dados) => {
-  const { nome, idade, email } = dados;
-  if (!nome || !idade || !email) {
-    throw new Error("Nome, idade e email são obrigatórios.");
-  }
-  return await prisma.voluntarios.create({ data: { nome, idade, email } });
+
+export const criarVoluntario = async (dadosVoluntario) => {
+  return await prisma.voluntarios.create({
+    data: dadosVoluntario,
+  });
 };
 
 export const listarVoluntarios = async () => {
-  return await prisma.voluntarios.findMany();
+  return await prisma.voluntarios.findMany({
+    include: { organizacao: true }, // traz a organização vinculada
+  });
 };
 
-export const buscarPorId = async (id) => {
+export const buscarVoluntarioPorId = async (id) => {
   return await prisma.voluntarios.findUnique({
-    where: { id_voluntarios: id },
+    where: { id_voluntarios: Number(id) },
     include: { organizacao: true },
   });
 };
 
-export const atualizarVoluntario = async (id, dados) => {
+export const atualizarVoluntario = async (id, dadosAtualizados) => {
   return await prisma.voluntarios.update({
-    where: { id_voluntarios: id },
-    data: dados,
+    where: { id_voluntarios: Number(id) },
+    data: dadosAtualizados,
   });
 };
 
 export const deletarVoluntario = async (id) => {
   return await prisma.voluntarios.delete({
-    where: { id_voluntarios: id },
+    where: { id_voluntarios: Number(id) },
   });
 };
 
 export const associarOrganizacao = async (idVoluntario, idOrganizacao) => {
-  // Atualiza a organização com o ID do voluntário
-  return await prisma.organizacao.update({
-    where: { id_organizacao: idOrganizacao },
-    data: { id_voluntarios: idVoluntario },
+  return await prisma.voluntarios.update({
+    where: { id_voluntarios: Number(idVoluntario) },
+    data: { organizacao: { connect: { id_organizacao: Number(idOrganizacao) } } },
   });
 };
