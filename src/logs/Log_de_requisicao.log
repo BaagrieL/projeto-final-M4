@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2025-05-18	22:50:51	e2368064-3e07-49d7-8fc7-8c879ae3ef91	POST	//localizacao/organizacao/:id/localizacoes?nome=%22%22	undefined
 2025-05-18	22:51:35	b842e395-6975-4d5a-b0ae-b18d74635bd7	POST	//localizacao/organizacao/:id/localizacoes?nome=%22%22	undefined
 2025-05-18	22:58:54	1c7c3e87-d082-4a01-8dea-596112426083	POST	//localizacao/organizacao/:id/localizacoes?nome=%22%22	undefined
@@ -121,3 +122,21 @@
 2025-05-20	00:38:43	42f6a0f4-2213-45d9-a822-1f7af0b7ff5d	PUT	/localizacao/atualiza/1	undefined
 2025-05-20	00:40:33	8971725f-5a74-4a51-b053-7c62db0a7e6d	DELETE	/localizacao/delete/1	undefined
 2025-05-20	00:41:14	776244be-7016-40e4-8e88-b87edb4d21b9	GET	/localizacao/?nome=%22%22	undefined
+=======
+2025-05-19	19:32:10	0507fb5c-51e2-45a0-a6b6-9cae0125ca06	GET	/	undefined
+2025-05-19	19:53:49	769370e4-a0a9-4b6c-baa6-a9249290c37e	GET	/organizacoes	undefined
+2025-05-19	19:53:49	258b600b-a981-49e6-87dc-cae9cec92938	GET	/favicon.ico	undefined
+2025-05-19	20:48:11	ca68bffc-d37f-4cda-bc53-9e8dcb3ad6b4	GET	/	undefined
+2025-05-19	20:58:48	94c8197c-5080-4d92-bb9c-7b401d231412	GET	/	undefined
+2025-05-19	21:04:58	041ac39a-9f56-4f9c-a06e-2cea67b84b86	GET	/organizacoes	undefined
+2025-05-19	21:06:45	5874e355-d896-4518-a990-24c99898fae0	GET	/	undefined
+2025-05-19	21:29:21	38e259c7-0971-4920-92cd-815975db1cdc	GET	/	undefined
+2025-05-19	21:42:45	1985a2ea-9101-46bc-aecb-ed3cf2053628	GET	/	undefined
+2025-05-19	22:22:11	49488750-43b1-47c5-bc92-cf6fba703c64	GET	/	undefined
+2025-05-19	22:23:20	0bf56210-b024-4165-8e75-a6115231396c	GET	/organizacoes	undefined
+2025-05-19	22:29:36	2ab9f3d9-b06e-440b-a8f1-6fbb78902cf6	GET	/	undefined
+2025-05-19	22:29:50	24dda678-ee02-4ce9-af2a-1f8a8e979634	GET	/organizacoes	undefined
+2025-05-19	22:31:25	3102f55a-3727-4a61-987d-84c7b88bd764	GET	/organizacoes	undefined
+2025-05-19	22:40:15	2f594743-6b50-4b7f-9da3-1d310961303d	GET	/	undefined
+2025-05-19	22:40:32	c678a3c9-016b-4deb-bf7d-d54a1b95b08a	GET	/organizacoes	undefined
+>>>>>>> 9e536029e32392ae5ebe7531057c99493c15a08c

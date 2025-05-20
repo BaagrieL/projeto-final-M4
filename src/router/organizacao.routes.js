@@ -1,29 +1,12 @@
 import express from 'express';
-import prisma from '../service/localizacao.service.js';
+import * as organizacaoController from '../controllers/organizacao.controller.js';
 
-const organizacao = express.Router();
+const router = express.Router();
 
-//
-organizacao.post("/criarorganizacao", async (req, res) => {
-    try {
-        const {nome, cnpj, endereco, telefone, email} = req.body;
+router.post('/', organizacaoController.criarOrganizacao);
+router.get('/', organizacaoController.listarOrganizacoes);
+router.get('/:id', organizacaoController.buscarOrganizacaoPorId);
+router.put('/:id', organizacaoController.atualizarOrganizacao);
+router.delete('/:id', organizacaoController.deletarOrganizacao);
 
-        if (!nome || !cnpj || !endereco || !telefone || !email) {
-            return res.status(400).json({error: "Parâmetros obrigatórios faltando."});
-        }
-        const novaOrganizacao = await prisma.organizacao.create({
-            data: {
-                nome,
-                cnpj,
-                endereco,
-                telefone,
-                email
-            }
-        });
-        res.status(201).json(novaOrganizacao);
-    } catch (error) {
-        res.status(404).json({erro: `Organização não foi criado: ${error}`});
-    }
-})
-
-export default organizacao;
+export default router;
