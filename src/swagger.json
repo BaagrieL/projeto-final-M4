@@ -1,0 +1,151 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Rede Solidária API",
+    "description": "API para gerenciamento de doações e doadores",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/Redesolidaria/doadores": {
+      "post": {
+        "summary": "Cadastrar novo doador",
+        "description": "Endpoint para cadastrar um novo doador no sistema",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "nome": {
+                    "type": "string",
+                    "description": "Nome do doador",
+                    "example": "João Silva"
+                  },
+                  "idade": {
+                    "type": "integer",
+                    "description": "Idade do doador",
+                    "example": 30
+                  },
+                  "email": {
+                    "type": "string",
+                    "description": "Email do doador (deve ser único)",
+                    "example": "joao@email.com"
+                  },
+                  "telefone": {
+                    "type": "string",
+                    "description": "Telefone do doador (10-11 dígitos)",
+                    "example": "11999999999"
+                  }
+                },
+                "required": ["nome", "email"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Doador cadastrado com sucesso",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": true
+                    },
+                    "data": {
+                      "type": "object",
+                      "properties": {
+                        "id_doadores": {
+                          "type": "integer",
+                          "example": 1
+                        },
+                        "nome": {
+                          "type": "string",
+                          "example": "João Silva"
+                        },
+                        "idade": {
+                          "type": "integer",
+                          "example": 30
+                        },
+                        "email": {
+                          "type": "string",
+                          "example": "joao@email.com"
+                        },
+                        "telefone": {
+                          "type": "string",
+                          "example": "11999999999"
+                        }
+                      }
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Doador cadastrado com sucesso!"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 201
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Erro de validação",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Email já cadastrado. Por favor, use outro email."
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 400
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erro interno do servidor",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": {
+                      "type": "boolean",
+                      "example": false
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Erro ao cadastrar doador"
+                    },
+                    "error": {
+                      "type": "string"
+                    },
+                    "status": {
+                      "type": "integer",
+                      "example": 500
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

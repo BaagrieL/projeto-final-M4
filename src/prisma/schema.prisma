@@ -8,7 +8,7 @@ datasource db {
 }
 
 model doadores {
-  id_doadores Int     @id @default(autoincrement())
+  id_doadores Int      @id @default(autoincrement())
   nome        String?
   idade       Int?
   email       String?
