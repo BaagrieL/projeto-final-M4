@@ -81,7 +81,7 @@ model localizacao {
   longitude      Decimal?         @db.Decimal(11, 8)
   id_organizacao Int?
   impacto_social impacto_social[]
-  organizacao    organizacao?     @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: NoAction, onUpdate: NoAction, map: "localizacao_ibfk_1")
+  organizacao organizacao? @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: Cascade)
 
   @@index([id_organizacao], map: "idl_organizacao")
 }

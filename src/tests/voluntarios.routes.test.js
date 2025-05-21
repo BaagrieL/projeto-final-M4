@@ -1,10 +1,27 @@
 import request from 'supertest';
 import app from '../server.js';
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
+let server;
+let voluntarioId;
+let organizacao;
+
+beforeAll(() => {
+  // Usa uma porta aleatória para evitar EADDRINUSE
+  server = app.listen(0);
+});
+
+afterAll(async () => {
+  // Deleta os dados em ordem correta para evitar erro de FK
+  await prisma.voluntarios.deleteMany();
+  await prisma.organizacao.deleteMany();
+  await prisma.$disconnect();
+  server.close();
+});
 
 describe('Rotas de Voluntários', () => {
-  let voluntarioId;
-  let organizacao;
-
   beforeAll(async () => {
     const res = await request(app).post('/organizacoes').send({
       nome: "Organização para Voluntário",
@@ -16,13 +33,8 @@ describe('Rotas de Voluntários', () => {
     organizacao = res.body;
   });
 
-  it('Deve listar voluntários (GET /voluntarios)', async () => {
-    const res = await request(app).get('/voluntarios');
-    expect(res.statusCode).toBe(200);
-    expect(Array.isArray(res.body)).toBe(true);
-  });
-
-  it('Deve criar voluntário (POST /voluntarios)', async () => {
+  it('Deve listar voluntários com organização associada (GET /voluntarios)', async () => {
+    // Cria um voluntário antes de listar
     const novoVoluntario = {
       nome: "Voluntário Teste",
       telefone: "11966666666",
@@ -30,10 +42,16 @@ describe('Rotas de Voluntários', () => {
       id_organizacao: organizacao.id_organizacao
     };
 
-    const res = await request(app).post('/voluntarios').send(novoVoluntario);
-    expect(res.statusCode).toBe(201);
-    expect(res.body).toHaveProperty('id_voluntarios');
-    voluntarioId = res.body.id_voluntarios;
+    const createRes = await request(app).post('/voluntarios').send(novoVoluntario);
+    voluntarioId = createRes.body.id_voluntarios;
+
+    const res = await request(app).get('/voluntarios');
+    expect(res.statusCode).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
+
+    const voluntario = res.body.find(v => v.id_voluntarios === voluntarioId);
+    expect(voluntario).toBeDefined();
+    expect(voluntario.organizacao).toHaveProperty('nome', organizacao.nome);
   });
 
   it('Deve atualizar voluntário (PUT /voluntarios/:id)', async () => {

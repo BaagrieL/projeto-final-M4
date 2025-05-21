@@ -28,10 +28,6 @@ app.use("/organizacoes", organizacaoRoutes);
 app.use("/voluntarios", voluntarioRoutes);
 app.use("/doacao",doacaoRoutes);
 
-// Inicialização do servidor
-app.listen(PORT, () => {
-  logEvents(`Servidor rodando na porta ${PORT}`, "listen.log");
-  console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-});
+
 
 export default app;

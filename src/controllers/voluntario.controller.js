@@ -7,6 +7,11 @@ export const criarVoluntario = async (req, res) => {
   try {
 
     const { nome, telefone, email, id_organizacao } = req.body;
+  
+        if (!nome || !telefone || !email || !id_organizacao) {
+      return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
+    }
+
 
       const novoVoluntario = await prisma.voluntarios.create({
         data: {
