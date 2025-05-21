@@ -1,10 +1,19 @@
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
-
 export const criarVoluntario = async (dadosVoluntario) => {
+  const idadeConvertida =
+    dadosVoluntario.idade !== undefined &&
+    dadosVoluntario.idade !== null &&
+    dadosVoluntario.idade !== ''
+      ? parseInt(dadosVoluntario.idade, 10)
+      : null;
+
   return await prisma.voluntarios.create({
-    data: dadosVoluntario,
+    data: {
+      ...dadosVoluntario,
+      idade: idadeConvertida,
+    },
   });
 };
 
@@ -22,9 +31,19 @@ export const buscarVoluntarioPorId = async (id) => {
 };
 
 export const atualizarVoluntario = async (id, dadosAtualizados) => {
+  const idadeConvertida =
+    dadosAtualizados.idade !== undefined &&
+    dadosAtualizados.idade !== null &&
+    dadosAtualizados.idade !== ''
+      ? parseInt(dadosAtualizados.idade, 10)
+      : null;
+
   return await prisma.voluntarios.update({
     where: { id_voluntarios: Number(id) },
-    data: dadosAtualizados,
+    data: {
+      ...dadosAtualizados,
+      idade: idadeConvertida,
+    },
   });
 };
 

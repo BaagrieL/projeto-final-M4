@@ -1,26 +1,28 @@
 import * as voluntarioService from '../service/voluntario.service.js';
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient, Prisma } from '@prisma/client';
 const prisma = new PrismaClient();
-
 
 export const criarVoluntario = async (req, res) => {
   try {
+    const { nome, telefone, email, id_organizacao, idade } = req.body;
 
-    const { nome, telefone, email, id_organizacao } = req.body;
-  
-        if (!nome || !telefone || !email || !id_organizacao) {
+    if (!nome || !telefone || !email || !id_organizacao) {
       return res.status(400).json({ error: 'Todos os campos são obrigatórios.' });
     }
 
+    const idadeInt = idade !== undefined && idade !== null && idade !== ''
+      ? parseInt(idade, 10)
+      : null;
 
-      const novoVoluntario = await prisma.voluntarios.create({
-        data: {
-          nome,
-          telefone,
-          email,
-          id_organizacao
-        }
-      });
+    const novoVoluntario = await prisma.voluntarios.create({
+      data: {
+        nome,
+        telefone,
+        email,
+        id_organizacao,
+        idade: idadeInt,
+      },
+    });
 
     res.status(201).json(novoVoluntario);
   } catch (error) {
@@ -32,7 +34,6 @@ export const criarVoluntario = async (req, res) => {
     }
   }
 };
-
 
 export const listarVoluntarios = async (req, res) => {
   try {
@@ -55,7 +56,16 @@ export const buscarVoluntarioPorId = async (req, res) => {
 
 export const atualizarVoluntario = async (req, res) => {
   try {
-    const voluntario = await voluntarioService.atualizarVoluntario(req.params.id, req.body);
+    const dadosAtualizados = { ...req.body };
+
+    if ('idade' in dadosAtualizados) {
+      dadosAtualizados.idade =
+        dadosAtualizados.idade !== undefined && dadosAtualizados.idade !== null && dadosAtualizados.idade !== ''
+          ? parseInt(dadosAtualizados.idade, 10)
+          : null;
+    }
+
+    const voluntario = await voluntarioService.atualizarVoluntario(req.params.id, dadosAtualizados);
     res.json(voluntario);
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
@@ -85,7 +95,6 @@ export const deletarVoluntario = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
 
 export const associarOrganizacao = async (req, res) => {
   try {
