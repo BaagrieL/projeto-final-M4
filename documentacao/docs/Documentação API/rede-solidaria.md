@@ -72,7 +72,7 @@ npm install ou npm i
 ```
 4. Inicie o servidor
 ```
-node start.js
+node src/server.js
 ```
 
 ## Funcionalidades da API
