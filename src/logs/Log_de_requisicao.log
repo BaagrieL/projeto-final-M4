@@ -819,3 +819,4 @@
 2025-05-22	16:11:11	96dd192b-2711-45a8-b850-6553cf25e7f5	GET	/organizacoes/?nome=%22%22	undefined
 2025-05-22	16:18:15	b86a5dfc-ff0b-40b4-af2d-374a40f6d68a	GET	/api-docs	undefined
 2025-05-22	16:26:01	c274264c-4212-4aa4-a06a-f75b9a4a9782	GET	/doacao/?nome=%22%22	undefined
+2025-05-22	17:20:04	cee00755-a3cb-4213-8212-bd73be77aabe	GET	/ws	http://localhost:3000

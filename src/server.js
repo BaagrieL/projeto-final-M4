@@ -1,5 +1,5 @@
 import express from "express";
-import { swaggerUi, specs } from './swagger.js';
+import { swaggerSpec, swaggerUiServe, swaggerUiSetup } from "./swagger.js";
 import dotenv from "dotenv";
 import cors from "cors";
 import redesolidariaRouter from "./router/redesolidaria.routes.js";
@@ -21,7 +21,7 @@ app.use(logger);
 app.use(express.json());
 
 // Swagger
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
+app.use("/api-docs", swaggerUiServe, swaggerUiSetup(swaggerSpec));
 
 // Rotas
 app.use("/redesolidaria", redesolidariaRouter);
