@@ -1,5 +1,5 @@
 import express from "express";
-import { swaggerSpec, swaggerUiServe, swaggerUiSetup } from "./swagger.js";
+import { swaggerSpec, swaggerUiServe, swaggerUiSetup } from " ./swagger.js";
 import dotenv from "dotenv";
 import cors from "cors";
 import redesolidariaRouter from "./router/redesolidaria.routes.js";
@@ -34,7 +34,7 @@ app.use("/alertas", alertasRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
-  console.log(`Documentação Swagger em http://localhost:${PORT}}/api-docs`);
+  console.log(`Documentação Swagger em http://localhost:${PORT}/api-docs`);
 });
 
 export default app;

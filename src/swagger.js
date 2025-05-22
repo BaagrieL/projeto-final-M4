@@ -18,7 +18,7 @@ const options = {
     ],
   },
   // Ler os comentários com as instruções para o swagger renderizar a documentação
-  apis: ["./src/routes/*.js", "./src/models/*.js"], // Lê todos os arquivos .js dentro da pasta routes
+  apis: ["./src/routes/*.js"], // Lê todos os arquivos .js dentro da pasta routes
 };
 
 export const swaggerSpec = swaggerJSDoc(options);

@@ -820,3 +820,4 @@
 2025-05-22	16:18:15	b86a5dfc-ff0b-40b4-af2d-374a40f6d68a	GET	/api-docs	undefined
 2025-05-22	16:26:01	c274264c-4212-4aa4-a06a-f75b9a4a9782	GET	/doacao/?nome=%22%22	undefined
 2025-05-22	17:20:04	cee00755-a3cb-4213-8212-bd73be77aabe	GET	/ws	http://localhost:3000
+2025-05-22	17:24:21	dd5d9b26-56c2-4700-8af0-1733933cc9ea	GET	/ws	http://localhost:3000
