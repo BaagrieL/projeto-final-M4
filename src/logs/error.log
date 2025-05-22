@@ -1,0 +1,35 @@
+2025-05-20	15:05:22	3d38a67e-9ab1-47e3-8b2e-a847e7c446e0	Error: 
+Invalid `prisma.categoria_doacao.findMany()` invocation:
+
+{
+  select: {
+    id_categoria_doacao: true,
+    ~~~~~~~~~~~~~~~~~~~
+    quantidade: true,
+    validade: true,
+    doacao: true,
+    descricao_alimento: true,
+?   id_doacao?: true,
+?   tipo_doacao?: true,
+?   id_doadores?: true,
+?   id_organizacao?: true,
+?   organizacao?: true,
+?   doadores?: true,
+?   impacto_social?: true,
+?   _count?: true
+  }
+}
+
+Unknown field `id_categoria_doacao` for select statement on model `categoria_doacao`. Available options are marked with ?.
+2025-05-20	15:30:34	ff1e9537-8dc8-47fe-8f52-9b3aa94518ae	Error: tipo_doacao is not defined
+2025-05-20	15:30:38	73e22327-6d0f-4bf5-a3d5-4e973080ec50	Error: tipo_doacao is not defined
+2025-05-20	15:31:13	f81356ab-5a3c-4e4c-8259-5eeb4e3d1c85	Error: 
+Invalid `prisma.categoria_doacao.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+2025-05-20	15:31:15	3a6407eb-981a-4fcd-b76c-300f9b38f444	Error: 
+Invalid `prisma.categoria_doacao.update()` invocation:
+
+
+An operation failed because it depends on one or more records that were required but not found. No record was found for an update.

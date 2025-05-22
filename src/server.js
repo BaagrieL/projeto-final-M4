@@ -1,27 +1,32 @@
-import express from 'express';
+import express from "express";
+import dotenv from "dotenv";
+import cors from "cors";
 import redesolidariaRouter from "./router/redesolidaria.routes.js";
-import localizacao from './router/localizacao.routes.js';
-import organizacao from './router/organizacao.routes.js';
+import localizacaoRoutes from "./router/localizacao.routes.js";
+import organizacaoRoutes from "./router/organizacao.routes.js";
+import voluntarioRoutes from "./router/voluntario.routes.js";
+import doacaoRoutes from "./router/doacao.routes.js";
 import { logEvents, logger } from "./middlewares/logger.middlewares.js";
-import dotenv  from "dotenv";
-import cors from 'cors';
 
 dotenv.config();
 
 const app = express();
-app.use(cors());
-const PORT =  process.env.PORT || 3000;
+const PORT = process.env.BACKEND_PORT || 3000;
 
+// Middlewares globais
+app.use(cors());
 app.use(logger);
 app.use(express.json());
 
-//
+// Rotas
 app.use("/redesolidaria", redesolidariaRouter);
-
-//
-app.use("/localizacao", localizacao);
-app.use("/organizacao", organizacao);
+app.use("/localizacao", localizacaoRoutes);
+app.use("/organizacoes", organizacaoRoutes);
+app.use("/voluntarios", voluntarioRoutes);
+app.use("/doacao", doacaoRoutes);
 
 app.listen(PORT, () => {
-  logEvents(`Servidor rodando na porta ${PORT}`, "listen.log");
+  console.log(`Server running on port ${PORT}`);
 });
+
+export default app;

@@ -1,9 +1,9 @@
 import express from 'express';
 import prisma from '../service/localizacao.service.js'
-const localizacao = express.Router();
+const localizacaoRoutes = express.Router();
 
 //
-localizacao.get("/", async (req, res) => {
+localizacaoRoutes.get("/", async (req, res) => {
     const listaLocalizacoes = await prisma.localizacao.findMany({
         include: {organizacao: true}
     });
@@ -11,7 +11,7 @@ localizacao.get("/", async (req, res) => {
 });
 
 // 
-localizacao.post("/organizacao/:id/localizacoes", async (req, res) => {
+localizacaoRoutes.post("/organizacao/:id/localizacoes", async (req, res) => {
     try { 
         const {id} = req.params;
         const {nome, longitude, latitude} = req.body;
@@ -35,7 +35,7 @@ localizacao.post("/organizacao/:id/localizacoes", async (req, res) => {
 });
 
 //
-localizacao.put("/atualiza/:id", async (req, res) => {
+localizacaoRoutes.put("/atualiza/:id", async (req, res) => {
     const {id} = req.params;
     const {nome, longitude, latitude} = req.body;
 
@@ -55,7 +55,7 @@ localizacao.put("/atualiza/:id", async (req, res) => {
 });
 
 //
-localizacao.delete("/delete/:id", async (req, res) => {
+localizacaoRoutes.delete("/delete/:id", async (req, res) => {
     const {id} = req.params;
 
     try {
@@ -68,4 +68,4 @@ localizacao.delete("/delete/:id", async (req, res) => {
     }
 });
 
-export default localizacao;
+export default localizacaoRoutes;

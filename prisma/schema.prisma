@@ -25,6 +25,7 @@ model categoria_doacao {
   quantidade     Int?
   tipo_doacao    categoria_doacao_tipo_doacao?
   validade       DateTime?                     @db.Date
+  descricao_doacao   String?            @db.VarChar(200)
   id_doadores    Int?
   id_organizacao Int?
   organizacao    organizacao?                  @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: NoAction, onUpdate: NoAction, map: "categoria_doacao_ibfk_1")
@@ -80,7 +81,7 @@ model localizacao {
   longitude      Decimal?         @db.Decimal(11, 8)
   id_organizacao Int?
   impacto_social impacto_social[]
-  organizacao    organizacao?     @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: NoAction, onUpdate: NoAction, map: "localizacao_ibfk_1")
+  organizacao organizacao? @relation(fields: [id_organizacao], references: [id_organizacao], onDelete: Cascade)
 
   @@index([id_organizacao], map: "idl_organizacao")
 }
@@ -92,27 +93,32 @@ model organizacao {
   endereco         String?            @db.VarChar(200)
   telefone         String?            @db.VarChar(11)
   email            String?            @db.VarChar(200)
-  id_voluntarios   Int?
-  id_doadores      Int?
+
+  voluntarios      voluntarios[]      // agora sim: uma organização tem vários voluntários
+
   alerta           alerta[]
   categoria_doacao categoria_doacao[]
   feedback         feedback[]
   impacto_social   impacto_social[]
   localizacao      localizacao[]
-  voluntarios      voluntarios?       @relation(fields: [id_voluntarios], references: [id_voluntarios], onDelete: NoAction, onUpdate: NoAction, map: "organizacao_ibfk_1")
-  doadores         doadores?          @relation(fields: [id_doadores], references: [id_doadores], onDelete: NoAction, onUpdate: NoAction, map: "organizacao_ibfk_2")
+  doadores         doadores?          @relation(fields: [id_doadores], references: [id_doadores])
+  id_doadores      Int?
 
   @@index([id_doadores], map: "ido_doadores")
-  @@index([id_voluntarios], map: "ido_voluntarios")
+
 }
 
+
 model voluntarios {
-  id_voluntarios Int           @id @default(autoincrement())
-  nome           String?       @db.VarChar(200)
-  idade          Int?
-  email          String?       @db.VarChar(200)
-  organizacao    organizacao[]
+  id_voluntarios   Int         @id @default(autoincrement())
+  nome             String?     @db.VarChar(200)
+  telefone         String?     @db.VarChar(20)  
+  idade            Int?
+  email            String?     @db.VarChar(200)
+  id_organizacao   Int
+  organizacao      organizacao @relation(fields: [id_organizacao], references: [id_organizacao])
 }
+
 
 enum alerta_tipo_alerta {
   urgente
