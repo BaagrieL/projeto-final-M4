@@ -1,5 +1,5 @@
 import express from 'express';
-import prisma from '../config/prisma.js'
+import prisma from '../config/prisma.js';
 const localizacaoRoutes = express.Router();
 
 //
@@ -40,7 +40,7 @@ localizacaoRoutes.put("/atualiza/:id", async (req, res) => {
     const {nome, longitude, latitude} = req.body;
 
     try {
-        const atualizarLocalizacao = await prisma.Localizacao.update({
+        const atualizarLocalizacao = await prisma.localizacao.update({
             where: {id_localizacao: parseInt(id)},
             data: {
                 nome, 
