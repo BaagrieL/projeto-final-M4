@@ -7,6 +7,7 @@ import organizacaoRoutes from "./router/organizacao.routes.js";
 import voluntarioRoutes from "./router/voluntario.routes.js";
 import doacaoRoutes from "./router/doacao.routes.js";
 import { logEvents, logger } from "./middlewares/logger.middlewares.js";
+import alertasRoutes from "./router/alerta.routes.js";
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.use("/localizacao", localizacaoRoutes);
 app.use("/organizacoes", organizacaoRoutes);
 app.use("/voluntarios", voluntarioRoutes);
 app.use("/doacao", doacaoRoutes);
+app.use("/alertas", alertasRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
