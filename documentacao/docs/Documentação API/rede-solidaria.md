@@ -109,8 +109,8 @@ npm test
 ## Contribuidores
 - [Ruany Pereira Lopes](https://github.com/RuanyLopes)
 - [Maria Eduarda Silva Souza](https://github.com/Mariaeduardamatias)
-- [Melissa de Amorim Pinheiro](#)
-- [Emilly Santos Silva](#)
+- [Melissa de Amorim Pinheiro](https://github.com/mel-pinheiro)
+- [Emilly Santos Silva](https://github.com/emil1y)
 - [Jerônimo Santos Rodrigues](https://github.com/JeronimoSantos)
 - [Pedro de Sousa Freitas](https://github.com/PedroSousaF)
 - [Davi Nunes de Azevedo](https://github.com/Davinunesaz)
