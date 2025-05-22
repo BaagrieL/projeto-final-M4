@@ -2,7 +2,8 @@
 sidebar_position: 1
 ---
 
-# Rede Solidária
+# Rede Solidária 
+<img src="https://img.shields.io/badge/license-MIT-green" alt="licença" />
 
 ## Sistema de Doação de Alimentos, Roupas e Produtos Essenciais 🤝
 
@@ -113,3 +114,7 @@ npm test
 - [Jerônimo Santos Rodrigues](https://github.com/JeronimoSantos)
 - [Pedro de Sousa Freitas](https://github.com/PedroSousaF)
 - [Davi Nunes de Azevedo](https://github.com/Davinunesaz)
+
+## Licença
+
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
