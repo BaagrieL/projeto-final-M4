@@ -1,5 +1,5 @@
 import express from "express";
-import { swaggerSpec, swaggerUiServe, swaggerUiSetup } from " ./swagger.js";
+import { swaggerSpec, swaggerUiServe, swaggerUiSetup } from "./swagger.js";
 import dotenv from "dotenv";
 import cors from "cors";
 import redesolidariaRouter from "./router/redesolidaria.routes.js";
