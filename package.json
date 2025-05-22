@@ -9,7 +9,8 @@
     "start": "node src/server.js",
     "prisma:migrate": "npx prisma migrate dev --schema=src/prisma/schema.prisma",
     "prisma:generate": "npx prisma generate --schema=src/prisma/schema.prisma",
-    "postinstall": "npx prisma generate --schema=src/prisma/schema.prisma"
+    "postinstall": "chmod +x ./node_modules/.bin/prisma && npx prisma generate --schema=src/prisma/schema.prisma"
+
   },
   "author": "",
   "license": "ISC",
