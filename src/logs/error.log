@@ -33,3 +33,5 @@ Invalid `prisma.categoria_doacao.update()` invocation:
 
 
 An operation failed because it depends on one or more records that were required but not found. No record was found for an update.
+2025-05-22	15:18:45	6f6073fa-67df-4c40-940b-b0c392561f15	Error: Cannot read properties of undefined (reading 'findMany')
+2025-05-22	15:18:47	1ea2ff57-f8ab-4d79-9c9c-8fd3d36c2712	Error: Cannot read properties of undefined (reading 'findMany')
