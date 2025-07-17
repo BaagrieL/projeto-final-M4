@@ -91,6 +91,7 @@ class AuthController {
             res.json({
                 id: user.userId,
                 username: user.username,
+                role: user.role
             });
         } catch (error) {
             res.status(500).json({
