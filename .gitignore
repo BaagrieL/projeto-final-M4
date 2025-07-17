@@ -40,3 +40,4 @@ src/prisma/dev.db
 # Prisma
 generated/
 .qodo
+src/prisma/migrations/migration_lock.toml
