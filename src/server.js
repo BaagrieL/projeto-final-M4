@@ -10,6 +10,7 @@ import doacaoRoutes from "./router/doacao.routes.js";
 import { logEvents, logger } from "./middlewares/logger.middlewares.js";
 import alertasRoutes from "./router/alerta.routes.js";
 import impactoRoutes from "./router/impacto.routes.js";
+import authRoutes from "./router/auth.routes.js";
 
 dotenv.config();
 
@@ -32,6 +33,7 @@ app.use("/voluntarios", voluntarioRoutes);
 app.use("/doacao", doacaoRoutes);
 app.use("/alertas", alertasRoutes);
 app.use("/impacto", impactoRoutes)
+app.use("/auth", authRoutes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
